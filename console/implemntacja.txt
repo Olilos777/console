@@ -1,0 +1,15 @@
+Na podstawie analizy kodu, oto kilka aspektów, które warto wzi¹æ pod uwagê pod k¹tem bezpieczeñstwa:
+
+    Bezpieczeñstwo danych wejœciowych:
+        Kod nie zawiera ¿adnych mechanizmów walidacji lub filtracji danych wejœciowych. Nale¿y pamiêtaæ, ¿e dane wprowadzane przez u¿ytkownika mog¹ byæ potencjalnie niebezpieczne, takie jak znaki specjalne, znaki ucieczki, d³ugie ci¹gi znaków itp. Nale¿y zastosowaæ odpowiednie metody walidacji i filtrowania danych, aby zapobiec potencjalnym atakom, takim jak wstrzykniêcie kodu, przepe³nienie buforu itp.
+
+    Zarz¹dzanie pamiêci¹:
+        W kodzie nie ma widocznych problemów zwi¹zanych z zarz¹dzaniem pamiêci¹. Jednak nale¿y zawsze dbaæ o odpowiednie zarz¹dzanie pamiêci¹, zw³aszcza gdy korzysta siê z dynamicznie alokowanych obiektów, takich jak wskaŸniki lub kolekcje, aby unikn¹æ wycieków pamiêci i niezdefiniowanego zachowania.
+
+    Bezpieczeñstwo systemowe:
+        Funkcja changeDir(std::string newPath) u¿ywa funkcji fs::current_path() i fs::path do operacji na systemie plików. W przypadku korzystania z funkcji zwi¹zanych z systemem plików, zawsze nale¿y sprawdzaæ i weryfikowaæ dostêpne uprawnienia u¿ytkownika do unikniêcia nieautoryzowanego dostêpu lub modyfikacji plików i katalogów.
+
+    Ograniczenia danych wejœciowych:
+        Niektóre operacje, takie jak konkatenacja œcie¿ek, mog¹ prowadziæ do d³ugich lub nieprawid³owych œcie¿ek, które mog¹ byæ nieobs³ugiwane przez system plików. Nale¿y zadbaæ o odpowiednie walidowanie danych wejœciowych i sprawdzenie, czy nie przekraczaj¹ one ograniczeñ systemowych.
+
+Wa¿ne jest, aby pamiêtaæ, ¿e powy¿sze uwagi dotycz¹ ogólnych aspektów bezpieczeñstwa. Bezpieczeñstwo aplikacji zale¿y od wielu czynników, takich jak kontekst, œrodowisko, interakcje z innymi komponentami systemu, dostêpnoœæ aktualizacji, audyt kodu itp. Zawsze nale¿y przeprowadziæ dog³êbne testy i analizê bezpieczeñstwa aplikacji, aby zidentyfikowaæ i rozwi¹zaæ potencjalne zagro¿enia w specyficznym kontekœcie.
